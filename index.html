@@ -1,93 +1,158 @@
 <!doctype html>
-<header class="site-header">
-<div class="container header-inner">
-<a class="brand" href="index.html">
-<img src="/mnt/data/ac173d93-d4d8-4160-986c-4db3b792981f.png" alt="Akhil Jose" class="avatar"/>
-<div class="brand-text">
-<h1>Akhil Jose</h1>
-<p class="role">ML Engineer | Data Scientist</p>
-</div>
-</a>
-<nav class="nav">
-<button class="nav-toggle" aria-label="Open navigation">☰</button>
-<ul class="nav-list">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
-</header>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Akhil Jose — ML Engineer | Data Scientist</title>
+  <meta name="description" content="Akhil Jose — ML Engineer & Data Scientist Portfolio: ML, Trading Automation, RAG, FastAPI." />
 
-<main>
-</div>
-</section>
+  <!-- REQUIRED: CSS file -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 
+<body class="dark">
 
-<section class="highlights">
-<div class="container">
-<div class="cards">
-<article class="card">
-<h3>Trading Automation</h3>
-<p>Backtesting engine, Kite Connect integration, indicator library (EMA, RSI, ADX), and ML-based signal classification.</p>
-</article>
-<article class="card">
-<h3>ML Deployments</h3>
-<p>FastAPI + model endpoints for real-time predictions and batch inference pipelines.</p>
-</article>
-<article class="card">
-<h3>RAG / GenAI</h3>
-<p>Retrieval-augmented generation for PDF chatbots and domain-specific question answering.</p>
-</article>
-</div>
-</div>
-</section>
+  <header class="site-header">
+    <div class="container header-inner">
 
+      <a class="brand" href="index.html">
+        <img src="assets/avatar.jpg" alt="Akhil Jose" class="avatar" />
+        <div class="brand-text">
+          <h1>Akhil Jose</h1>
+          <p class="role">ML Engineer | Data Scientist</p>
+        </div>
+      </a>
 
-<section class="featured-projects">
-<div class="container">
-<h2>Featured Projects</h2>
-<div class="project-grid">
-<a class="project" href="projects.html#trading">
-<div class="project-placeholder">Trading Automation</div>
-<div class="project-info">
-<h4>Trading Automation Engine</h4>
-<p>Backtester + ML signals using XGBoost and technical indicators.</p>
-</div>
-</a>
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Open navigation">☰</button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
+    </div>
+  </header>
 
-<a class="project" href="projects.html#rag_chat">
-<div class="project-placeholder">RAG Chat</div>
-<div class="project-info">
-<h4>RAG Chat over PDFs</h4>
-<p>Document QA system using embeddings + LLM (RAG).</p>
-</div>
-</a>
+  <main>
 
+    <!-- Animated Background -->
+    <section class="hero">
+      <canvas id="bg-canvas" class="bg-canvas"></canvas>
 
-<a class="project" href="projects.html#fastapi">
-<div class="project-placeholder">FastAPI Deploy</div>
-<div class="project-info">
-<h4>FastAPI ML Deployment</h4>
-<p>Model serving, endpoints, and monitoring hooks.</p>
-</div>
-</a>
-</div>
-</div>
-</section>
+      <div class="container hero-grid">
 
-</main>
+        <div class="hero-left">
 
+          <h2 class="hi">Hello — I'm <span class="accent">Akhil Jose</span></h2>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<p>© <span id="year"></span> Akhil Jose • Built with HTML, CSS & JS • <a href="https://github.com/yourusername/portfolio-akhil">GitHub</a></p>
-</div>
-</footer>
+          <p class="lead">
+            I build ML systems, trading automation engines, and RAG-powered
+            applications — blending engineering with machine learning.
+          </p>
 
+          <!-- Typing animation -->
+          <div class="typing">
+            <span id="typed-text"></span><span class="cursor">|</span>
+          </div>
 
-<script src="js/main.js"></script>
+          <div class="cta">
+            <a class="btn" href="projects.html">View Projects</a>
+            <a class="btn btn-outline" href="assets/resume.pdf" download>Download Resume</a>
+          </div>
+
+          <ul class="skills-pill">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>Machine Learning</li>
+            <li>RAG & LLMs</li>
+            <li>Kite Connect Trading</li>
+          </ul>
+
+        </div>
+
+        <div class="hero-right">
+          <div class="avatar-wrap">
+            <img src="assets/avatar.jpg" class="hero-avatar" alt="Akhil Avatar" />
+            <div class="avatar-glow"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+      <div class="container">
+        <div class="cards">
+
+          <article class="card">
+            <h3>Trading Automation</h3>
+            <p>Backtesting engine, indicator library (EMA, RSI, ADX), ML-based signals.</p>
+          </article>
+
+          <article class="card">
+            <h3>ML Deployments</h3>
+            <p>FastAPI model endpoints, batch pipelines, inference optimization.</p>
+          </article>
+
+          <article class="card">
+            <h3>RAG / GenAI</h3>
+            <p>Document QA systems using embeddings + LLM (RAG).</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+
+        <div class="project-grid">
+          <a class="project" href="projects.html#trading">
+            <div class="project-placeholder">Trading Automation</div>
+            <div class="project-info">
+              <h4>Trading Automation Engine</h4>
+              <p>Backtester + ML classifier using XGBoost on indicators.</p>
+            </div>
+          </a>
+
+          <a class="project" href="projects.html#rag_chat">
+            <div class="project-placeholder">RAG Chatbot</div>
+            <div class="project-info">
+              <h4>RAG Chat over PDFs</h4>
+              <p>Document QA system using embeddings + OpenAI LLM.</p>
+            </div>
+          </a>
+
+          <a class="project" href="projects.html#fastapi">
+            <div class="project-placeholder">FastAPI Deployment</div>
+            <div class="project-info">
+              <h4>FastAPI ML Deployment</h4>
+              <p>Model serving, health checks, Docker setup.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Akhil Jose • Built with HTML, CSS, JS •
+        <a href="https://github.com/akhiljose1995">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- REQUIRED: Main JS -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
