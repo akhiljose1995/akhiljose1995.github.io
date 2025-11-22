@@ -1,69 +1,92 @@
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</nav>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Akhil Jose</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/avatar.jpg" alt="Akhil Jose" class="avatar">
+      <div class="brand-text">
+        <h1>Akhil Jose</h1>
+        <p class="role">ML Engineer | Data Scientist</p>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-expanded="false">☰</button>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-
 <main>
-<section class="projects container">
-<h2>Projects</h2>
+  <section class="projects container">
+    <h2>Projects</h2>
 
+    <!-- Trading Automation -->
+    <article id="trading" class="project-detail">
+      <div class="project-media">
+        <img src="assets/projects/trading.jpg" alt="Trading Automation Engine Screenshot">
+      </div>
+      <div class="project-body">
+        <h3>Trading Automation Engine</h3>
+        <p><strong>Stack:</strong> Python, Pandas, NumPy, Kite Connect API, XGBoost</p>
+        <p><strong>Summary:</strong> Modular OOP-based backtesting engine with EMA/RSI/ADX indicators and ML-driven signal classification. Includes unit-tested indicator modules and performance reporting.</p>
+        <p><strong>Deliverables:</strong></p>
+        <ul>
+          <li>Backtester with portfolio support</li>
+          <li>Indicator validation and unit tests</li>
+          <li>XGBoost classifier and evaluation reports</li>
+        </ul>
+        <p><a class="btn" href="https://github.com/yourusername/trading_automation" target="_blank" rel="noopener">View on GitHub</a></p>
+      </div>
+    </article>
 
-<article id="trading" class="project-detail">
-<div class="project-media">
-<img src="assets/projects/trading.jpg" alt="Trading Automation"/>
-</div>
-<div class="project-body">
-<h3>Trading Automation Engine</h3>
-<p><strong>Stack:</strong> Python, Pandas, NumPy, Kite Connect API, XGBoost</p>
-<p><strong>Summary:</strong> Built a modular OOP-based backtesting engine with EMA/RSI/ADX indicators and ML-driven signal classification. Includes unit-tested indicator modules and performance reporting.</p>
-<p><strong>Deliverables:</strong></p>
-<ul>
-<li>Backtester with portfolio support</li>
-<li>Indicator validation and unit tests</li>
-<li>XGBoost classifier and evaluation reports</li>
-</ul>
-<p><a class="btn" href="https://github.com/yourusername/trading_automation" target="_blank" rel="noopener">View on GitHub</a></p>
-</div>
-</article>
+    <!-- RAG Chat -->
+    <article id="rag_chat" class="project-detail">
+      <div class="project-media">
+        <img src="assets/projects/rag_chat.jpg" alt="RAG Chat Screenshot">
+      </div>
+      <div class="project-body">
+        <h3>RAG Chat — PDF Question Answering</h3>
+        <p><strong>Stack:</strong> LangChain, OpenAI (GPT-5.1 API), vector store, FastAPI</p>
+        <p><strong>Summary:</strong> Retrieval-augmented pipeline to answer user queries over multiple PDFs. Includes chunking, embeddings, and a conversational UI.</p>
+        <p><a class="btn" href="https://github.com/yourusername/rag-chat" target="_blank" rel="noopener">View on GitHub</a></p>
+      </div>
+    </article>
 
+    <!-- FastAPI Deployment -->
+    <article id="fastapi" class="project-detail">
+      <div class="project-media">
+        <img src="assets/projects/fastapi_deploy.jpg" alt="FastAPI Deployment Screenshot">
+      </div>
+      <div class="project-body">
+        <h3>FastAPI ML Deployment</h3>
+        <p><strong>Stack:</strong> FastAPI, Docker, Uvicorn, scikit-learn/XGBoost</p>
+        <p><strong>Summary:</strong> Production-ready API for model inference with health checks, Dockerfile, and CI-ready structure for deployments.</p>
+        <p><a class="btn" href="https://github.com/yourusername/fastapi-ml-deploy" target="_blank" rel="noopener">View on GitHub</a></p>
+      </div>
+    </article>
 
-<article id="rag_chat" class="project-detail">
-<div class="project-media">
-<img src="assets/projects/rag_chat.jpg" alt="RAG Chat"/>
-</div>
-<div class="project-body">
-<h3>RAG Chat — PDF Question Answering</h3>
-<p><strong>Stack:</strong> LangChain, OpenAI (GPT-5.1 API), vector store, FastAPI</p>
-<p><strong>Summary:</strong> Retrieval-augmented pipeline to answer user queries over multiple PDFs. Includes chunking, embeddings, and a conversational UI.</p>
-<p><a class="btn" href="https://github.com/yourusername/rag-chat" target="_blank" rel="noopener">View on GitHub</a></p>
-</div>
-</article>
-
-
-<article id="fastapi" class="project-detail">
-<div class="project-media">
-<img src="assets/projects/fastapi_deploy.jpg" alt="FastAPI Deploy"/>
-</div>
-<div class="project-body">
-<h3>FastAPI ML Deployment</h3>
-<p><strong>Stack:</strong> FastAPI, Docker, Uvicorn, scikit-learn/XGBoost</p>
-<p><strong>Summary:</strong> Production-ready API for model inference with health checks, Dockerfile, and CI-ready structure for deployments.</p>
-<p><a class="btn" href="https://github.com/yourusername/fastapi-ml-deploy" target="_blank" rel="noopener">View on GitHub</a></p>
-</div>
-</article>
-
-
-</section>
+  </section>
 </main>
 
-
 <footer class="site-footer">
-<div class="container footer-inner">
-<p>© <span id="year3"></span> Akhil Jose</p>
-</div>
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Akhil Jose</p>
+  </div>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

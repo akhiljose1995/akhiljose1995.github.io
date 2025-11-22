@@ -1,100 +1,113 @@
-// main.js - lightweight helpers: canvas background (subtle gradient particles), typing effect, mobile nav
-document.addEventListener('DOMContentLoaded', ()=>{
+// ===== Dynamic Year in Footer =====
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-  // set year
-  const y = new Date().getFullYear();
-  ['year'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.textContent = y;
+// ===== Mobile Navigation Toggle =====
+const navToggle = document.querySelector(".nav-toggle");
+const navList = document.querySelector(".nav-list");
+
+if (navToggle && navList) {
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
+    navToggle.setAttribute("aria-expanded", !expanded);
+    navList.classList.toggle("open");
   });
+}
 
+// ===== Typing Animation (only if elements exist) =====
+const typedText = document.getElementById("typed-text");
+const cursor = document.querySelector(".cursor");
 
-  // mobile nav
-  const toggle = document.querySelector('.nav-toggle');
-  const navList = document.querySelector('.nav-list');
-  if(toggle && navList){
-    toggle.addEventListener('click', ()=>{
-      navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-    });
-  }
+if (typedText && cursor) {
+  const phrases = [
+    "Building ML systems...",
+    "Automating trading workflows...",
+    "Deploying FastAPI services...",
+    "Designing RAG-powered apps..."
+  ];
 
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let currentPhrase = "";
+  let isDeleting = false;
 
-  // typing effect
-  const phrases = ['ML Engineer', 'Data Scientist', 'Trading Automation', 'RAG & LLMs'];
-  const typedEl = document.getElementById('typed-text');
-  let pi = 0, ci = 0, forward = true;
-
-  function tick(){
-    const phrase = phrases[pi];
-
-    if(forward){
-      ci++;
-      if(ci <= phrase.length) typedEl.textContent = phrase.slice(0,ci);
-      else { forward = false; setTimeout(tick,800); return; }
-
-    } else {
-      ci--;
-      if(ci >= 0) typedEl.textContent = phrase.slice(0,ci);
-      else { forward = true; pi = (pi+1) % phrases.length; }
-    }
-
-    setTimeout(tick, forward ? 90 : 40);
-  }
-  tick();
-
-
-  // canvas background (subtle moving dots)
-  const canvas = document.getElementById('bg-canvas');
-  if(canvas){
-    const ctx = canvas.getContext('2d');
-
-    function resize(){
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight * 0.6;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const dots = [];
-    for(let i=0; i<60; i++){
-      dots.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        r: Math.random()*1.6 + 0.4,
-        vx: (Math.random()-0.5)*0.3,
-        vy: (Math.random()-0.5)*0.3,
-        alpha: Math.random()*0.6 + 0.2
-      });
-    }
-
-    function render(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-
-      // subtle gradient background
-      const g = ctx.createLinearGradient(0,0,canvas.width,canvas.height);
-      g.addColorStop(0,'rgba(17,24,39,0.85)');
-      g.addColorStop(1,'rgba(6,7,10,0.9)');
-      ctx.fillStyle = g;
-      ctx.fillRect(0,0,canvas.width,canvas.height);
-
-      // draw dots
-      for(const d of dots){
-        d.x += d.vx;
-        d.y += d.vy;
-
-        if(d.x < 0 || d.x > canvas.width) d.vx *= -1;
-        if(d.y < 0 || d.y > canvas.height) d.vy *= -1;
-
-        ctx.beginPath();
-        ctx.fillStyle = `rgba(125,211,252,${d.alpha})`;
-        ctx.arc(d.x, d.y, d.r, 0, Math.PI*2);
-        ctx.fill();
+  function type() {
+    currentPhrase = phrases[phraseIndex];
+    if (!isDeleting) {
+      typedText.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(type, 1500); // pause before deleting
+        return;
       }
-
-      requestAnimationFrame(render);
+    } else {
+      typedText.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
     }
-
-    render();
+    setTimeout(type, isDeleting ? 50 : 100);
   }
 
-}); // END of DOMContentLoaded
+  type();
+}
+
+// ===== Background Canvas Animation =====
+const canvas = document.getElementById("bg-canvas");
+if (canvas) {
+  const ctx = canvas.getContext("2d");
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  let particles = [];
+  const numParticles = 60;
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.radius = Math.random() * 2 + 1;
+      this.dx = (Math.random() - 0.5) * 1.5;
+      this.dy = (Math.random() - 0.5) * 1.5;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = "#00bcd4";
+      ctx.fill();
+    }
+    update() {
+      this.x += this.dx;
+      this.y += this.dy;
+      if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+      this.draw();
+    }
+  }
+
+  function initParticles() {
+    particles = [];
+    for (let i = 0; i < numParticles; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => p.update());
+    requestAnimationFrame(animate);
+  }
+
+  initParticles();
+  animate();
+}

@@ -6,17 +6,23 @@
   <title>Akhil Jose — ML Engineer | Data Scientist</title>
   <meta name="description" content="Akhil Jose — ML Engineer & Data Scientist Portfolio: ML, Trading Automation, RAG, FastAPI." />
 
+  <!-- Favicon & Open Graph -->
+  <link rel="icon" href="assets/favicon.ico" />
+  <meta property="og:title" content="Akhil Jose — ML Engineer | Data Scientist" />
+  <meta property="og:description" content="Portfolio: ML, Trading Automation, RAG, FastAPI." />
+  <meta property="og:image" content="assets/avatar.jpg" />
+  <meta property="og:type" content="website" />
+
   <!-- REQUIRED: CSS file -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body class="dark">
-
-  <header class="site-header">
+ <header class="site-header">
     <div class="container header-inner">
 
-      <a class="brand" href="index.html">
-        <img src="assets/avatar.jpg" alt="Akhil Jose" class="avatar" />
+      <a class="brand" href="/">
+        <!-- img src="assets/avatar.jpg" alt="Akhil Jose" class="avatar" loading="lazy" / -->
         <div class="brand-text">
           <h1>Akhil Jose</h1>
           <p class="role">ML Engineer | Data Scientist</p>
@@ -24,7 +30,7 @@
       </a>
 
       <nav class="nav">
-        <button class="nav-toggle" aria-label="Open navigation">☰</button>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -49,8 +55,8 @@
           <h2 class="hi">Hello — I'm <span class="accent">Akhil Jose</span></h2>
 
           <p class="lead">
-            I build ML systems, trading automation engines, and RAG-powered
-            applications — blending engineering with machine learning.
+            AI & ML Engineer creating practical automation, analytics, and 
+            RAG-powered applications.
           </p>
 
           <!-- Typing animation -->
@@ -75,7 +81,7 @@
 
         <div class="hero-right">
           <div class="avatar-wrap">
-            <img src="assets/avatar.jpg" class="hero-avatar" alt="Akhil Avatar" />
+            <img src="assets/avatar.jpg" class="hero-avatar" alt="Akhil Avatar" loading="lazy" />
             <div class="avatar-glow"></div>
           </div>
         </div>
@@ -153,6 +159,10 @@
 
   <!-- REQUIRED: Main JS -->
   <script src="js/main.js"></script>
+
+  <noscript>
+    <p>Please enable JavaScript to view interactive features.</p>
+  </noscript>
 
 </body>
 </html>

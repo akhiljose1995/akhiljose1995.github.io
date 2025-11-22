@@ -1,52 +1,129 @@
-<main>
-<section class="about container">
-<div class="about-grid">
-<div class="about-left">
-<h2>About Me</h2>
-<p>I am a Machine Learning Engineer and Data Scientist with experience in Python automation, trading systems, and deploying ML models. I enjoy turning data into actionable solutions and productionizing models using clean engineering practices.</p>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Akhil Jose</title>
+  <meta name="description" content="About Akhil Jose — ML Engineer | Data Scientist" />
 
+  <link rel="icon" href="assets/favicon.ico" />
+  <meta property="og:title" content="About — Akhil Jose" />
+  <meta property="og:description" content="ML Engineer | Data Scientist | Automation | FastAPI | RAG" />
+  <meta property="og:image" content="assets/avatar.jpg" />
+  <meta property="og:type" content="website" />
 
-<h3>Key Skills</h3>
-<ul class="skills-list">
-<li>Python, pandas, NumPy</li>
-<li>SQL, Data Engineering, ETL</li>
-<li>ML: XGBoost, scikit-learn, model evaluation</li>
-<li>FastAPI, Docker, Deployment</li>
-<li>RAG, LangChain, LLMs</li>
-</ul>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 
+<body class="dark">
 
-<h3>Experience Highlights</h3>
-<ul class="timeline">
-<li><strong>Trading Automation</strong> — Built backtester + strategy engine (EMA, RSI, ADX).</li>
-<li><strong>Model Deployments</strong> — FastAPI endpoints for real-time inference and monitoring.</li>
-<li><strong>RAG Chatbots</strong> — PDF QA with retrieval + LLMs.</li>
-</ul>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-text">
+          <h1>Akhil Jose</h1>
+          <p class="role">ML Engineer | Data Scientist</p>
+        </div>
+      </a>
 
+      <nav class="nav">
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<a class="btn" href="assets/resume.pdf" download>Download Resume</a>
-</div>
+  <!-- Main About Section -->
+  <main>
+    <section class="hero">
+      <canvas id="bg-canvas" class="bg-canvas"></canvas>
 
+      <div class="container about-grid">
 
-<aside class="about-right">
-<img src="assets/avatar.jpg" alt="Akhil" class="card-avatar"/>
-<div class="contact-card">
-<h4>Contact</h4>
-<p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-<p>Location: Bengaluru, India</p>
-<p>Open to: ML Engineer / Data Scientist roles, contract or full-time</p>
-</div>
-</aside>
-</div>
-</section>
-</main>
+        <!-- LEFT COL -->
+        <div class="about-left">
 
+          <!-- Intro -->
+          <div class="about-intro">
+            <h2>About Me</h2>
+            <p class="tagline">
+              ML Engineer & Data Scientist passionate about automation, ML pipelines, and GenAI.
+            </p>
+          </div>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<p>© <span id="year2"></span> Akhil Jose</p>
-</div>
-</footer>
-<script src="js/main.js"></script>
+          <!-- Professional Summary -->
+          <p class="lead" style="margin-bottom: 2rem;">
+            I build machine learning systems, trading automation engines, and RAG-powered applications.
+            My work blends practical ML, clean engineering design, and a strong focus on reliability.
+          </p>
+
+          <!-- Core Strengths -->
+          <h3>Core Strengths</h3>
+          <div class="skill-cards" style="margin-bottom: 2rem;">
+            <span class="skill-card">Machine Learning (XGBoost, Tree Models)</span>
+            <span class="skill-card">Feature Engineering</span>
+            <span class="skill-card">FastAPI Deployment</span>
+            <span class="skill-card">Python Automation</span>
+            <span class="skill-card">Trading Algorithms</span>
+            <span class="skill-card">RAG & LLMs</span>
+            <span class="skill-card">SQL & ETL</span>
+            <span class="skill-card">Data Visualization</span>
+          </div>
+
+          <!-- Experience Timeline -->
+          <h3>Experience Snapshot</h3>
+          <ul class="timeline">
+            <li><strong>Trading Automation:</strong> Built a complete OOP-based backtesting and ML signal pipeline using EMA, RSI, ADX, and custom candlestick logic.</li>
+            <li><strong>ML Deployments:</strong> Developed FastAPI-based inference APIs with Docker support.</li>
+            <li><strong>RAG Systems:</strong> Built PDF QA chatbots using embeddings and GPT models.</li>
+            <li><strong>Python Automation:</strong> 4.9 years of industry experience in software validation & automation.</li>
+            <li><strong>Master’s in DSML:</strong> Currently pursuing advanced ML specialization at Scaler.</li>
+          </ul>
+
+          <!-- What I Enjoy -->
+          <h3>What I Love Working On</h3>
+          <p style="margin-bottom: 2rem;">
+            I enjoy optimizing ML workflows, simplifying data pipelines, and designing scalable model serving systems.  
+            I also actively learn and experiment with trading models, price action logic, and GenAI tooling.
+          </p>
+
+        </div>
+
+        <!-- RIGHT COL -->
+        <!-- <div class="about-right"> -->
+
+          <!-- Avatar -->
+          <!-- <img src="assets/avatar.jpg" alt="Akhil Jose" class="card-avatar" /> -->
+
+          <!-- Contact Card -->
+          <!-- <div class="contact-card">
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Location: Bengaluru, India</p>
+            <p>Open to: ML Engineer / Data Scientist Roles</p>
+          </div>
+
+        </div> -->
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Akhil Jose • Built with HTML, CSS, JS •
+        <a href="https://github.com/akhiljose1995">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
